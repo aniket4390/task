@@ -5,7 +5,6 @@ import 'package:task/View/HomePage/Components/userCard.dart';
 
 final userController = Get.find<UserController>();
 TextEditingController searchController = TextEditingController();
-
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -21,10 +20,7 @@ class HomePage extends StatelessWidget {
               children: [
                 Container(
                   width: 250,
-                  child: TextField(style: TextStyle(color: Colors.black),
-                    controller: searchController,
-                    onChanged: (val)=>userController.findUser(val),
-                  )     ,
+                  child: TextField(style: TextStyle(color: Colors.black),controller: searchController,onChanged: (val)=>userController.findUser(val),) 
                 ),
                 Icon(Icons.search)
               ],
@@ -43,14 +39,10 @@ class HomePage extends StatelessWidget {
                     if(controller.stateData[index]["name"].toString().toLowerCase().contains(controller.search.toString().toLowerCase()) == true){
                       return GestureDetector(
                         onTap: ()=>Get.toNamed("/UserDetail",arguments: index),
-                        child: UserCard(
-                          label: controller.stateData[index]["name"] ,index: index
-                        ),
+                        child: UserCard(label: controller.stateData[index]["name"] ,index: index),
                       ); 
                     }
-                    else{
-                      return Container();
-                    }
+                    else return Container();
                   },
                 );
               }

@@ -9,13 +9,11 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      //color: Colors.white,
+    return GetMaterialApp(  //MaterialApp by GetX
       debugShowCheckedModeBanner: false,
       theme: ThemeData.light(),
-      //initialBinding: MyBinding(),
       initialRoute: '/',
-      getPages: [
+      getPages: [ 
         GetPage( name: "/", page: () => HomePage(),binding: MyBinding()),
         GetPage( name: "/UserDetail", page: () => UserDetail(),binding: MyBinding()),
       ],

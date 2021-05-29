@@ -5,6 +5,7 @@ class MyBinding extends Bindings{
  @override
   void dependencies() {
     Get.lazyPut(() => UserController());
-    //Get.put(UserController());
   } 
 }
+
+//this class manage all dependencies in one class file
